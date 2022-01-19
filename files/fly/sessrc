@@ -1,0 +1,22 @@
+[Variables]
+UseExitDialog=true
+UseConfirmDialog=true
+DefaultExitItem=0
+
+;use or not session management
+UseSM=false
+
+;comma separated list of apps excluded from session
+ExcludeApps="fly-vkbd,qtnotifydaemon,pulseaudio,org_kde_powerdevil,kscreen_backend_launcher,fly-xkbmap,qtnotifydaemon,fly-printer-monitor,fly-cups-monitor,kmix,fly-orientation,fly-brightness,fly-reflex-service"
+
+; "restorePreviousLogout", "restoreSavedSession", "default"
+LoginMode=restorePreviousLogout
+
+;"default", "none", "reboot", "halt", "logout" (the same as "none")
+ShutdownType=default
+
+; remote exec, hostname and real cmd will be added after it
+RemoteExecCmd="ssh -X"
+
+; default remote user name, or empty if user names are in ssh config file (on per-hosts basis)
+RemoteUserName=

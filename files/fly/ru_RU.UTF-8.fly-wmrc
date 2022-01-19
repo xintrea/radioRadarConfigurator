@@ -1,0 +1,13 @@
+[Variables]
+;Dont edit this main file, edit files included below
+
+ImagePath	=/usr/share/fly-wm/images:/usr/share/fly-wm/images:/usr/share/icons
+SoundPath	=/usr/share/fly-wm/sounds:/usr/share/fly-wm/sounds
+XmmPath		=/usr/share/fly-wm/keymaps:/usr/share/fly-wm/keymaps
+
+include ~/.fly/paletterc
+include ~/.fly/sessrc
+include ~/.fly/keyshortcutrc
+include ~/.fly/apprc
+include ~/.fly/theme/current.themerc
+include ~/.fly/ru_RU.UTF-8.miscrc

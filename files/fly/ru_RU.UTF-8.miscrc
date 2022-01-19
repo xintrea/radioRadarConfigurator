@@ -1,0 +1,328 @@
+;**********************************************************************
+;  Разные меню (mics. internal menus)
+;**********************************************************************
+
+;**********************************************************************
+; Меню управления окном
+;**********************************************************************
+[CtrlMenu]
+;"Восстановить"		""			""	FLYWM_RESTORE
+;"Переместить"		""			""	FLYWM_MOVE
+;"Изменить размер"	""			""	FLYWM_RESIZE
+;"Минимизировать"	"go-down"		"Actions" FLYWM_MINIMIZE
+;"Максимизировать"	""			""	FLYWM_MAXIMIZE
+;"Раздвинуть"		""			""	FLYWM_EXPAND
+;"Опустить вниз"		""			""	FLYWM_LOWER
+;"Свернуть в трей"      ""                      ""	FLYWM_SWALLOW
+;""			""			""	FLYWM_SEPARATOR
+;"Запустить ещё"		""			""	FLYWM_RUN_ONE_MORE
+;"Приостановить"		""			""	FLYWM_STOP_CONT
+;"Создать ярлык"		""			""	FLYWM_CREATE_DESKTOP_ICON
+;""			""			""	FLYWM_SEPARATOR
+;"Влево на панели задач"  ""			""	FLYWM_TBTN_LEFT
+;"Вправо на панели задач" ""			""	FLYWM_TBTN_RIGHT
+;""			""			""	FLYWM_SEPARATOR
+"Закрыть окно"		"window-close"		"Actions" FLYWM_CLOSE
+;"Завершить задачу"	""              	"Actions" FLYWM_KILL
+;""			""			""	FLYWM_SEPARATOR
+;"Свойства"		""			""
+;+
+;  "Декорации"		""			""	FLYWM_TOGGLE_DECOR
+;  "Всегда наверху"	""			""	FLYWM_TOGGLE_ONTOP
+;  "Всегда внизу"	""			""	FLYWM_TOGGLE_ONBOTTOM
+;  "На всех столах"	""			""	FLYWM_TOGGLE_STICKY
+;  ""			""			""	FLYWM_SEPARATOR
+;  "Сохранить" 		""			""	FLYWM_WINPROP_ADD
+;  "По умолчанию"	""			""	FLYWM_WINPROP_DEL
+;  "Редактировать..."	""			""	FLYWM_WINPROP_EDIT
+;-
+
+;**********************************************************************
+; Desktop Menu configuration
+; Меню появляющееся на рабочем столе при нажатии правой кнопки мыши
+; Подменю уровней и категорий секретности добавляются динамически
+;**********************************************************************
+[DesktopMenu]
+;"Перерисовать экран"		""			""	"xrefresh"
+;""				""			""	FLYWM_SEPARATOR
+;"Обновить значки"		""			""	FLYWM_FORCE_UPDATE_SHORTCUT
+;"Выровнять по сетке"		""			""	FLYWM_LINEUP_ICON
+;"Упорядочить в колонки"		"" 			""	FLYWM_ORDER_ICON
+;""				""			""	FLYWM_SEPARATOR
+;"Окна каскадом"			""			""	FLYWM_OVERLAP_INSCR
+;"Сверху вниз"		"view-split-top-bottom" "Actions"	FLYWM_TILE_VERT_INSCR
+;"Слева направо"		"view-split-left-right" "Actions"	FLYWM_TILE_HORZ_INSCR
+;"Матрицей"			"" 			""	FLYWM_TILE_MATRIX_INSCR
+;""				""			""	FLYWM_SEPARATOR
+;"Сессия"			""			""
+;+
+;  "Сохранить"			""			""	FLYWM_SAVE_SESSION
+;  "Восстановить"		""			""	FLYWM_RESTORE_SESSION
+;-
+;""				""			""	FLYWM_SEPARATOR
+;"Закрыть все"	        	"window-close"		"Actions" FLYWM_CLOSE_ALL_INSCR
+;"Свернуть-развернуть все"	"user-desktop" 		"Places"  FLYWM_TOGGLE_MINIMIZE_ALL_INSCR
+;""				""			""	FLYWM_SEPARATOR
+;"Рабочий стол"			""			""
+;+
+;  "Вверх"			""		""		FLYWM_UP_PAGING
+;  "Вниз"			""		""		FLYWM_DOWN_PAGING
+;  "Влево"			""		""		FLYWM_LEFT_PAGING
+;  "Вправо"			""		""		FLYWM_RIGHT_PAGING
+;-
+;""				""		""		FLYWM_SEPARATOR
+;"Вставить"			"edit-paste"	"Actions"	FLYWM_ICON_PASTE
+;"Создать"			""		"Marker!"
+;+
+;  "Папку"			"folder"	"Places"	FLYWM_ICON_FOLDER_CREATE
+;  "Текстовый файл"		""		""		FLYWM_ICON_TXT_CREATE
+;  "Ярлык"			""		""		FLYWM_ICON_ITEM_CREATE
+;  ""				""		""		FLYWM_SEPARATOR
+;  "Скрипт сессии"		""		""		FLYWM_ICON_SESSION_CREATE
+;-
+;""				""		""		FLYWM_SEPARATOR
+;"Панель задач"			""		""		FLYWM_TOGGLE_TASKBAR
+;"Переключатель столов"		""		""		FLYWM_TOGGLE_PAGER
+;""				""		""		FLYWM_SEPARATOR
+"Завершение работы..."		"system-log-out" "Actions"	FLYWM_EXIT
+;""				""		""		FLYWM_SEPARATOR
+;"Настройка монитора..."  "" "" "fly-admin-screen"
+;"Свойства..."            "" "" "fly-admin-theme -dialog"
+
+;**********************************************************************
+; Icon Menu configuration
+;**********************************************************************
+[IconMenu]
+;"Открыть"		""				""	FLYWM_EXEC_ICON
+;"Открыть c помощью..."	""				""	FLYWM_ICON_OPEN_WITH
+;""			""				""	FLYWM_SEPARATOR
+;"Отправить"		""				""
+;+
+;  "Адрес..."		"mail-message-new"	"Actions"	FLYWM_ICON_SEND_TO_EMAIL
+;  ""	""	""	FLYWM_SEPARATOR
+;  "Домашнюю папку"	"user-home"		"Places"	FLYWM_ICON_SEND_TO_HOME
+;  "Документы"		"folder-txt"		"Places"	FLYWM_ICON_SEND_TO_MYDOC
+;  ""			""				""	FLYWM_SEPARATOR
+;  "Меню Пуск"		""	""	FLYWM_ICON_SEND_TO_STARTMENU
+;  "Панель запуска"	""	""	FLYWM_ICON_SEND_TO_TOOLBAR
+;  "Автозапуск"		""	""	FLYWM_ICON_SEND_TO_AUTOSTART
+;  "Обзор..."		""	""	FLYWM_ICON_SEND_TO_FOLDER
+;  ""	""	""	FLYWM_SEPARATOR
+;  "Текстовый редактор"	""	""	"kate %F"
+;  "Двоичный редактор"	""	""	"fly-hexedit %F"
+;  "Архив"		""				""	"fly-archiver compress %F"
+;  ""			""				""	FLYWM_SEPARATOR
+;  "Корзину"	""				""	FLYWM_ICON_SEND_TO_TRASH
+;  ""			""				""	FLYWM_SEPARATOR
+;  "Дискету"	"media-floppy"	"Devices"	FLYWM_ICON_SEND_TO_FLOPPY
+;-
+;""			""				""	FLYWM_SEPARATOR
+;"Вырезать"		"edit-cut"		"Actions"	FLYWM_ICON_CUT
+;"Копировать"		"edit-copy"		"Actions"	FLYWM_ICON_COPY
+;""			""				""	FLYWM_SEPARATOR
+;"Удалить"		""				""	FLYWM_DELETE_ICON
+;"Удалить"		""				""	FLYWM_ICON_SEND_TO_TRASH
+;"Переименовать"		""				""	FLYWM_ICON_RENAME
+;""			""				""	FLYWM_SEPARATOR
+;"Свойства..." "" "" FLYWM_ICON_PROPERTIES
+
+
+;**********************************************************************
+; Taskbar Menu configuration
+; Меню появляется при нажатии правой кнопки на панели задач
+; Подменю уровней и категорий секретности добавляются динамически
+;**********************************************************************
+[TaskbarMenu]
+;"Окна каскадом"			""			""	FLYWM_OVERLAP_INSCR
+;"Окна сверху вниз"		"view-split-top-bottom" "Actions" FLYWM_TILE_VERT_INSCR
+;"Окна слева направо"		"view-split-left-right" "Actions" FLYWM_TILE_HORZ_INSCR
+;"Матрицей"			"" 			""	FLYWM_TILE_MATRIX_INSCR
+;""				""			""	FLYWM_SEPARATOR
+;"Закрыть все"	        	"window-close"    	"Actions" FLYWM_CLOSE_ALL_INSCR
+;"Свернуть-развернуть все"	"user-desktop"		"Places" FLYWM_TOGGLE_MINIMIZE_ALL_INSCR
+;"Переключатель столов"		""		""		FLYWM_TOGGLE_PAGER
+;""				""			""	FLYWM_SEPARATOR
+;"Свойства"			""			""
+;+
+;  "Расположение"		""			""
+;  +
+;	"Внизу"			""			""	FLYWM_BOTTOM
+;	"Наверху"		""			""	FLYWM_TOP
+;	"Слева"			""			""	FLYWM_LEFT
+;	"Справа"		""			""	FLYWM_RIGHT
+;  -
+;  "Ряды"		""			""
+;  +
+;    "Добавить"        ""          ""  FLYWM_TASKBAR_ROWS_INC
+;    "Удалить"         ""          ""  FLYWM_TASKBAR_ROWS_DEC
+;  -
+;  "Автосокрытие"		""			""	FLYWM_TOGGLE_AUTOHIDE
+;  "Включена"			""			""	FLYWM_TOGGLE_TASKBAR
+;  "Закреплена"			""			""	FLYWM_TOGGLE_FIX_TASKBAR
+;  "Поверх всех"			""			""	FLYWM_TOGGLE_ONTOP_TASKBAR
+;-
+
+;******************************************************************
+; Меню для кнопки Пуск
+;******************************************************************
+
+[StartButtonMenu]
+;"Менеджер файлов..."	""	""	"fly-fm ~/.fly/startmenu"
+;"Поиск..."		""	""	"fly-find -d"
+;"Выполнить..."		""	""	"fly-run"
+;""			""	""	FLYWM_SEPARATOR
+;"Обновить"		""	""	FLYWM_UPDATE_STARTMENU
+;"Редактировать..."	""	""	"fly-menuedit ~/.fly/startmenu"
+;"Классическое"		""	""	FLYWM_TOGGLE_START_MENU
+
+[StartContextMenu]
+;"Создать папку" "folder" "Places" FLYWM_ICON_FOLDER_CREATE
+;"Добавить пункт" ""       ""       FLYWM_ICON_ITEM_CREATE
+;"Удалить"        ""       ""       FLYWM_ICON_SEND_TO_TRASH
+;"Отправить"     ""        ""
+;+
+;  "Рабочий стол"	""	""	FLYWM_ICON_SEND_TO_DESKTOP
+;  "Меню Пуск"		""	""	FLYWM_ICON_SEND_TO_STARTMENU
+;  "Панель запуска"	""	""	FLYWM_ICON_SEND_TO_TOOLBAR
+;  "Автозапуск"		""	""	FLYWM_ICON_SEND_TO_AUTOSTART
+;  "Обзор..."		""	""	FLYWM_ICON_SEND_TO_FOLDER
+;-
+;"Свойства..."		"" 		""		FLYWM_ICON_PROPERTIES
+;""			""		""		FLYWM_SEPARATOR
+;"Вырезать"		"edit-cut"	"Actions"	FLYWM_ICON_CUT
+;"Копировать"		"edit-copy"	"Actions"	FLYWM_ICON_COPY
+;"Вставить"		"edit-paste"	"Actions"	FLYWM_ICON_PASTE
+;""			""		""		FLYWM_SEPARATOR
+;"Обновить"		""		""		FLYWM_UPDATE_STARTMENU
+;"Редактировать..."	""		""		"fly-menuedit"
+
+;******************************************************************
+; Меню для панели инструментов
+;******************************************************************
+
+[ToolbarMenu]
+;"Создать"		""		""		FLYWM_ICON_ITEM_CREATE
+;"Удалить"		"" 		""		FLYWM_ICON_SEND_TO_TRASH
+;"Отправить"		""				""
+;+
+;  "Рабочий стол"	""	""	FLYWM_ICON_SEND_TO_DESKTOP
+;  "Меню Пуск"	""	""	FLYWM_ICON_SEND_TO_STARTMENU
+;  "Автозапуск"	""	""	FLYWM_ICON_SEND_TO_AUTOSTART
+;  "Обзор..."	""	""	FLYWM_ICON_SEND_TO_FOLDER
+;-
+;"Свойства..."		"" 		""		FLYWM_ICON_PROPERTIES
+;""			""		""		FLYWM_SEPARATOR
+;"Вырезать"		"edit-cut"	"Actions"	FLYWM_ICON_CUT
+;"Копировать"		"edit-copy"	"Actions"	FLYWM_ICON_COPY
+;"Вставить"		"edit-paste"	"Actions"	FLYWM_ICON_PASTE
+;""			""		""		FLYWM_SEPARATOR
+;"Менеджер файлов..."	""		""		"fly-fm ~/.fly/toolbar"
+;"Поиск..."		""		""		"fly-find -d"
+;"Выполнить..."		""		""		"fly-run"
+;"Обновить"		""		""		FLYWM_UPDATE_TOOLBAR
+;"Редактировать..."	""		""		"fly-menuedit ~/.fly/toolbar"
+;"Классическое"		""		""		FLYWM_TOGGLE_START_MENU
+
+;**********************************************************************
+; Indicator configuration
+;    <identifier> <exec file name>
+;
+;    Identifier is the title name, resource name or resource
+;    class of a window for an indicator.
+;**********************************************************************
+[Indicators]
+;columns are:
+;"name id"	"exec or func"	"comment(tooltip)"	"icon" "context of icon"
+"maclevel" "CLICK_EXEC_PROG pkill fly-dialog;fly-dialog --icon dialog-information --caption \"Мандатный уровень и категория\" --msgbox \"`pdp-id`\""  "" "" ""
+;"maclevel"  "CLICK_EXEC_PROG pkill fly-mac-dialog;fly-mac-dialog -n"  "" "" ""
+"xkb"      "FLYWM_TOGGLE_KB" "Переключатель клавиатуры"   "" ""
+;"xbiff"		"xbiff" "" "" ""
+;"XEyes"		"xeyes" "" "" ""
+;"xload"	"xload -nolabel -update 1 -bg lightblue" "" "" ""
+;"pager"    	"FLYWM_ENABLE_PAGER"	"Рабочие столы"		"fly-pager-win" "Applications"
+;"switcher"	"FLYWM_SWITCHER_TOGGLE"	"Переключатель окон"	"preferences-system-windows" "Applications"
+
+;*********************************************************************
+; Accessories configuration
+;	<image> <ctx>  <location>   <style>
+;	image    - an image file whose format is supported
+;	ctx	 - an icon context, if image is icon name (no extension)
+;	location - Top, Bottom, Left, Right, TopLeft, TopRight, 
+;	BottomLeft, BottomRight, Center, or position (like +0+0)
+;	style    - Background, OnTop, or Application.
+;*********************************************************************
+[Accessories]
+;"/usr/share/fly-wm/images/astra_full_logo.xpm" "" Background TopRight
+
+;**********************************************************************
+; Диалог завершения работы
+; Exit dialog configuration
+;    <part> <str or image name> (<action>)
+;
+;    Action is specified in the case of RadioButton. (fly-wm internal
+;    function or exec file name)
+;**********************************************************************
+[ExitDialog]
+Title		"Завершение работы"		""
+;StaticText	"What should I do?"		""
+RadioButton	"Закончить сессию"		""	FLYWM_LOGOUT
+;RadioButton     "Заблокировать экран"		""	FLYWM_LOCK
+;RadioButton	"Перезапустить сессию"		""	FLYWM_RESTART
+RadioButton	"Перезагрузить компьютер"	""	FLYWM_REBOOT
+RadioButton	"Выключить компьютер" 		""	FLYWM_SHUTDOWN
+IconImage	"/usr/share/fly-wm/images/exit_session.png"
+IconImage	"/usr/share/fly-wm/images/exit_reboot.png"
+IconImage	"/usr/share/fly-wm/images/exit_shutdown.png"
+OKButton	"Да"				""
+CancelButton	"Отмена"			""
+;HelpButton	"Help"				""
+
+;**********************************************************************
+; Меню появляется при нажатии правой кнопки на часах
+;**********************************************************************
+[ClockMenu]
+;"Свойства..."		"" ""		"fly-admin-date --toggle"
+
+;**********************************************************************
+; Меню появляется при нажатии правой кнопки на индикаторе клавиатуры
+;**********************************************************************
+[XkbMenu]
+;"Английский"		"" ""		FLYWM_BASE_KB
+;"Русский"		"" ""		FLYWM_ALT_KB
+;""			"" ""		FLYWM_SEPARATOR
+;"Свойства..."		"" ""		"fly-xkbmap"
+
+;**********************************************************************
+; Меню появляется при щелчке правой кнопкой на индикаторе уровня секретности
+; Подменю уровней и категорий секретности добавляются динамически
+;**********************************************************************
+[MACLevelMenu]
+;"Свойства..." "" "" "fly-su -- fly-admin-smc"
+
+;**********************************************************************
+; Меню появляется при щелчке правой кнопкой на переключателе рабочих столов
+;**********************************************************************
+[PagerMenu]
+;"Включен"		"" ""		FLYWM_TOGGLE_PAGER
+;"Поверх всех"		"" ""		FLYWM_TOGGLE_ONTOP_PAGER
+;""			"" ""		FLYWM_SEPARATOR
+;"Увеличить"		"" ""		FLYWM_INC_SIZE_PAGER
+;"Уменьшить"	 	"" "" 		FLYWM_DEC_SIZE_PAGER
+;"Максимизировать"	"" ""		FLYWM_MAXIMIZE_PAGER
+;"Восстановить"		"" ""		FLYWM_RESTORE_PAGER
+;""			"" ""		FLYWM_SEPARATOR
+;"Добавить ряд"		"" ""		FLYWM_ADD_ROW_PAGER
+;"Удалить ряд"		"" ""		FLYWM_SUB_ROW_PAGER
+;"Добавить колонку"	"" "" 		FLYWM_ADD_COL_PAGER
+;"Удалить колонку"	"" ""		FLYWM_SUB_COL_PAGER
+
+;**********************************************************************
+; Меню появляется при операции drop на рабочем столе
+;**********************************************************************
+[DndMenu]
+;"Копировать"		"" ""		FLYWM_DND_COPY
+;"Переместить"		"" ""		FLYWM_DND_MOVE
+;ALD: no symlink allowed from home to other paths
+;"Создать ярлык"		"" ""		FLYWM_DND_LINK
+;""			"" ""		FLYWM_SEPARATOR
+;"Отмена"		"" ""		FLYWM_DND_CANCEL
